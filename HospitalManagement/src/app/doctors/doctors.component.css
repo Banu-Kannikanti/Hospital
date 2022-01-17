@@ -1,0 +1,31 @@
+/* The container must be positioned relative: */
+  /* select {
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 17px;
+    border: 1px solid rgb(153, 148, 148);
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQ01YzH9KX8O8EBi4u7Ss32842gGVLGMbU-GlIrI9tlxsgXOYQsosUFdQVxPn4D9hvyk&usqp=CAU) 96% / 15% no-repeat #EEE;
+  }
+  select {
+    background: none\9;
+    padding: 5px\9;
+} */
+table{
+    margin-top:50px;
+    border: rgb(17, 17, 17);
+}
+td
+{
+  padding-top: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+th{
+  text-align: center;
+}

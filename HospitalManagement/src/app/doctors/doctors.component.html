@@ -1,0 +1,18 @@
+<h2 class="text-md "> Doctors Details</h2>
+            <div class="row col-md-6 col-md-offset-2 custyle">
+            <table class="table table-bordered table-dark text-center-sm">
+            <thead>
+                <tr>
+                    <th class="p -3">Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let doctor of doctors">
+                    <td>{{doctor.name}}</td>
+                    <td><button class="btn btn-primary sm" (click)="getdoctorbyid(doctor.did)">View Details</button></td>
+                  </tr>
+            </tbody>
+            </table>
+            </div>
+        

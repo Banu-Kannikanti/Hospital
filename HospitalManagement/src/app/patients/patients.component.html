@@ -1,0 +1,31 @@
+<h2 class="text-md-center"> Patients List</h2>
+<label for="id"><b>Enter Patient Id </b></label><br>
+<form>
+<div class="form-group">
+    <input type="number" class ="form-control p-2" [(ngModel)]="id" id = "did" name = "id">
+<button (click) = "getPatientsByid()" class = "btn btn-info p-2"> Get Patient Details</button>
+</div>
+</form>
+<section *ngIf="errormessage">
+    <h1>{{errormessage}}</h1>
+</section>
+<div *ngIf="patient ">
+<table class = "table table-bordered text-center-sm">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th>Age</th>
+            <th> Date of Visit </th>
+            <th> Doctor Consulted </th>
+            <th> prescription </th>
+        </tr>
+    </thead>
+    <tbody>
+            <td> {{ patient.name }} </td>
+            <td>{{patient.age}}</td>
+            <td> {{ patient.dateOfVisit }} </td>
+            <td> {{ patient.doctor.name}} </td>
+            <td> {{ patient.prescription}} </td>
+    </tbody>
+</table>
+</div>
