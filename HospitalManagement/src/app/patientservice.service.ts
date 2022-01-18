@@ -28,7 +28,6 @@ return this.httpClient.post(`${this.baseURL}`,patient)
       errormessage=
         `No Patient exists in the database with that Id `;
     }
-    // Return an observable with a user-facing error message.
     return throwError(errormessage);
   }
 }

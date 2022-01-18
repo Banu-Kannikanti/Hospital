@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PatientserviceService } from '../patientservice.service';
 
 import { PatientsComponent } from './patients.component';
 
@@ -8,6 +11,8 @@ describe('PatientsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[RouterTestingModule,HttpClientTestingModule],
+      providers:[PatientserviceService],
       declarations: [ PatientsComponent ]
     })
     .compileComponents();

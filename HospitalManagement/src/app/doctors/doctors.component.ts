@@ -19,7 +19,7 @@ export class DoctorsComponent implements OnInit {
     this.getDoctors()
     this.getdoctorbyid(this.id)
   }
-  private getDoctors() {
+ getDoctors() {
     this.doctorservice.getDoctorsList().subscribe(data=>{
       this.doctors=data;
     })

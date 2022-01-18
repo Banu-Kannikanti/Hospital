@@ -56,7 +56,7 @@ class HospitalApplicationTests {
 			@Test
 			@Order(4)
 			public void testPatientRead() {
-				Patient patient= pr.findById(1).get();
+				Patient patient= pr.findById(2).get();
 				assertEquals("Hari", patient.getName());
 			}
 			@Test
@@ -68,7 +68,8 @@ class HospitalApplicationTests {
 				patient.setDateOfVisit("11-2-2022");
 				patient.setName("Hari");
 				patient.setPrescription("Dolo");
-				assertNotNull(dr.getById(1));
+				pr.save(patient);
+				assertNotNull(pr.getById(1));
 			}
 			
 			@AfterEach
