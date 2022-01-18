@@ -31,10 +31,6 @@ export class DoctorsComponent implements OnInit {
     //   this.doctor = data;
     //   console.log(this.doctor.did)
   };
-// onSubmit()
-// {
-//   console.log()
-// }
 }
 
 

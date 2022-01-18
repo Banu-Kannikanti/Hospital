@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Doctor } from '../doctor';
+import { DoctorserviceService } from '../doctorservice.service';
 import { Patient } from '../patient';
 import { PatientserviceService } from '../patientservice.service';
 
@@ -12,13 +13,16 @@ import { PatientserviceService } from '../patientservice.service';
 export class CreatepatientComponent implements OnInit {
   patient: Patient=new Patient();
   doctors!: Doctor[];
-  constructor(private patientservice:PatientserviceService,
+  selectedDoctor!: Doctor;
+  constructor(private patientservice:PatientserviceService,private doctorservice:DoctorserviceService,
     private router:Router) { }
 
   ngOnInit(): void {
+    this.getDoctors();
   }
   savePatient()
   {
+    this.patient.doctor.did=this.selectedDoctor.did;
     this.patientservice.createPatient(this.patient).subscribe(data=>{
       console.log(data);
       this.goToPatientsList();
@@ -33,5 +37,13 @@ this.router.navigate(['/patients'])
   {
     console.log(this.patient);
     this.savePatient();
+  }
+  SetSelectedDoctor(doctor:Doctor):void{
+this.selectedDoctor=doctor;
+  }
+  private getDoctors() {
+    this.doctorservice.getDoctorsList().subscribe(data=>{
+      this.doctors=data;
+    })
   }
 }
