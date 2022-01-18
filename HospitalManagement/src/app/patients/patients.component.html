@@ -9,7 +9,7 @@
 <section *ngIf="errormessage">
     <h1>{{errormessage}}</h1>
 </section>
-<div *ngIf="patient ">
+<div *ngIf="patient && !errormessage ">
 <table class = "table table-bordered text-center-sm">
     <thead>
         <tr>
